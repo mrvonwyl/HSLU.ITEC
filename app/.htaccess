@@ -1,0 +1,7 @@
+ErrorDocument 404 /pages/system/notfound.php
+
+RewriteEngine	on
+
+RewriteBase 	/
+
+RewriteRule		^([^/\.]+)/([^\.]+)/?$									/index.php?loc=$1&page=$2 [L]

@@ -1,0 +1,90 @@
+// CONSTANTS
+
+/*
+
+l	layout
+c	color
+b	border
+bg	background
+f	font
+e	element
+	desc
+ 
+*/
+
+// DIMENSIONS
+
+// Example: 20px -> 20px / 13px (@lSizeBase) = 1.5384rem
+
+@lBaseFontSize: 81.25%; // 100% = 16px, 81.25% = 13px;
+
+@lBaseSize: 1.5384rem;
+@lWidth: 100%;
+@lHeight: 100%;
+@lHeaderHeight: @lBaseSize * 2.5; // 50px
+@lFooterHeight: @lBaseSize * 2.5; // 50px
+@lLeftWidth: @lBaseSize * 10; // 200px
+@lRightWidth: @lBaseSize * 15; // 300px
+
+@eHeightBase: @lBaseSize * 1.5; // 30px
+
+// FONTS, COLORS & BORDERS
+
+@fSize: 1rem;
+@fFamily: Open Sans;
+@fLineHeight: 1.4545em;
+
+@cFontL: #EEE;
+@cFontD: #6A6A6A;
+
+@cG1: #222;
+@cG2: #333;
+@cG3: #AAA;
+@cG4: #CCC;
+@cG5: #EEE;
+@cA1: #0074A2;
+@cA2: #2EA2CC;
+
+@cBorder: @cG3;
+
+@cMGeneral: #EBEBEB;
+@cMError: @cMGeneral + #140000;
+@cMSuccess: @cMGeneral + #001400;
+
+@cBMGeneral: @cBorder;
+@cBMSuccess: @cG3 - #A0A;
+@cBMError: @cG3 - #0AA;
+
+
+
+@bBase: 0.0909rem solid @cG3;
+
+// LAYOUT BACKGROUNDS
+
+@cBGBody: @cG4;
+@cBGHeader: @cG1;
+@cBGFooter: @cG1;
+@cBGLeft: @cG1;
+@cBGRight: @cG4;
+@cBGContent: lighten(@cG4, 20%);
+
+// COMMANDS
+
+@cBGCmdNeutral: @cG1;
+@cFCmdNeutral: @cFontL;
+
+@cBGCmdHover: @cG2;
+@cFCmdHover: @cA2;
+
+@cBGCmdCurrent: @cA1;
+@cFCmdCurrent: @cFontL;
+
+@cBGCmdDisabled: @cG4;
+@cFCmdDisabled: @cG5; 
+
+// MAINMENU
+
+@cBGMainMenu: @cBGLeft;
+@cFMainMenu: @cFontL;
+@fSizeMainMenu: 1.0769rem /*14px*/;
+@cBGMainMenuSub: @cG2;

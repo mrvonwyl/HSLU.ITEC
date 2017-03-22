@@ -1,0 +1,8 @@
+Filename				Version		Compression
+jquery					2.1.0		no
+jquery.typewatch		custom		no
+jquery.ui				1.10.3		no
+jquery.datatables		1.10.3		no
+jquery.jeditable		1.7.1		no
+jquery.editinplace		2.2.1		no
+less					1.7.0		min

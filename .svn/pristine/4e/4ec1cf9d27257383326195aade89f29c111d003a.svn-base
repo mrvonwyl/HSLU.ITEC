@@ -1,0 +1,500 @@
+/************************************\
+				IMPORTS
+\************************************/
+
+// DIMENSIONS
+// Example: 20px -> 20px / 13px (@lSizeBase) = 1.5384rem
+
+@htmlFontSize: 81.25%; // 100% = 16px, 81.25% = 13px;
+@baseSize: 1.5384rem;
+
+
+// LAYOUT
+
+@lWidth: 100%;
+@lHeight: 100%;
+@lHeaderHeight: 3.8462rem; // 50px
+@lFooterHeight: 3.8462rem; // 50px
+@lLeftWidth: 18.1818rem; // 200px
+@lRightWidth: 27.2727rem; // 300px
+
+@elementBaseHeight: 2.7272rem; // 30px
+
+// FONTS, COLORS & BORDERS
+
+@baseFontSize: 1rem;
+@baseFontFamily: Open Sans;
+@baseLineHeight: 1.4545em;
+
+@fontColorLight: #EEE;
+@fontColorDark: #6A6A6A;
+
+@colorGrey0: #000;
+@colorGrey1: #222;
+@colorGrey2: #333;
+@colorGrey3: #AAA;
+@colorGrey4: #CCC;
+@colorGrey5: #EEE;
+@colorGrey6: #FFF;
+@colorAccent1: #0074A2;
+@colorAccent2: #2EA2CC;
+
+@baseBorderColor: @colorGrey3;
+@baseBorder: 0.0909rem solid @colorGrey3;
+
+
+// PADDING & MARGIN
+
+@basePadding: (@elementBaseHeight - (@baseFontSize * @baseLineHeight)) / 2;
+
+
+// LAYOUT BACKGROUNDS
+
+@bgBody: @colorGrey4;
+@bgHeader: @colorGrey1;
+@bgFooter: @colorGrey1;
+@bgLeft: @colorGrey1;
+@bgRight: @colorGrey4;
+@bgContent: lighten(@colorGrey4, 20%);
+
+
+// COMMANDS
+
+@cmdBgColorNeutral: @colorGrey1;
+@cmdFontColorNeutral: @fontColorLight;
+
+@cmdBgColorHover: @colorGrey2;
+@cmdFontColorHover: @colorAccent2;
+
+@cmdBgColorCurrent: @colorAccent1;
+@cmdFontColorCurrent: @fontColorLight;
+
+@cmdBgColorDisabled: @colorGrey4;
+@cmdFontColorDisabled: @colorGrey5; 
+
+
+// MAINNAV
+
+@navFontColor: @fontColorLight;
+@navFontSize: 1.0769rem; // 14px
+
+@navBgColor: @bgLeft;
+@navBgColorSub: @colorGrey2;
+
+
+// MESSENGER
+
+@msgMsgHeight: @elementBaseHeight;
+
+@msgBgColorNeutral: @colorGrey5 - #030303;
+@msgBgColorError: @msgBgColorNeutral + #140000;
+@msgBgColorSuccess: @msgBgColorNeutral + #001400;
+
+@msgIconColorNeutral: @baseBorderColor;
+@msgIconColorError: @colorGrey3 - #0AA;
+@msgIconColorSuccess: @colorGrey3 - #A0A;
+@msgIconColorHover: @colorGrey2;
+
+/************************************\
+	 			MIXINS
+\************************************/
+
+.mShadow{
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.60);
+    -moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.60);
+    -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.60);
+}
+
+/************************************\
+				STYLES
+\************************************/
+
+*{		
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	
+	padding: 0;
+	margin: 0;
+	border: 0;
+	
+	font-family: @baseFontFamily;
+	line-height: @baseLineHeight;
+	text-decoration: none;
+}
+
+html{
+	height: 100%;
+	font-size: @htmlFontSize;
+	color: @fontColorDark;
+}
+
+body{
+	height: 100%;
+	background: @bgBody;
+	overflow: hidden;
+	font-size: @baseFontSize;
+}
+
+#page{
+	width: @lWidth;
+	height: @lHeight;
+	min-height: 45.4545rem;
+	margin: 0 auto;
+	position: relative;
+
+	#header{
+		width: 100%;
+		height: @lHeaderHeight;
+		background: @bgHeader;
+	}
+	
+	#center{
+		width: 100%;
+		height: calc(~'(100%)' - (@lHeaderHeight + @lFooterHeight));
+		
+		#left{
+			width: @lLeftWidth;
+			height: 100%;
+			background: @bgLeft;
+			float: left;	
+		}
+		
+		#content{
+			width: calc(~'(100%)' - (@lLeftWidth + @lRightWidth));
+			height: 100%;
+			float: left;
+			background: @bgContent;
+			padding: @baseSize / 2;
+			overflow-y: auto;
+		}
+		
+		#right{
+			width: @lRightWidth;
+			height: 100%;
+			float: right;
+			background: @bgRight;	
+		}
+	}
+	
+	#footer{
+		width: 100%;
+		height: @lFooterHeight;
+		background: @bgFooter;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+	}
+}
+
+.grid1, .grid2, .grid3, .grid4, .grid5, .grid6, .grid7, .grid8, .grid9, .grid10, .grid11, .grid12{
+	display: inline;
+    float: left;
+    position: relative;
+    
+    & > div{
+    	margin: @baseSize / 2;
+    	padding: @baseSize;
+    	background: @colorGrey5;
+    	
+    	&.noBg{
+    		background: none;
+    	}
+    	
+    	& > :last-child{
+	    	margin-bottom: 0;
+	    }
+    }
+}
+
+.grid1{		width: 8.333333%;	}
+.grid2{		width: 16.666667%;	}
+.grid3{		width: 25%;			}
+.grid4{		width: 33.333333%;	}
+.grid5{		width: 41.666667%;	}
+.grid6{		width: 50%;			}
+.grid7{		width: 58.333333%;	}
+.grid8{		width: 66.666667%;	}
+.grid9{		width: 75%;			}
+.grid10{	width: 83.333333%;	}
+.grid11{	width: 91.666667%;	}
+.grid12{	width: 100%;		}
+
+
+#mainMenu{
+	background: @navBgColor;
+	padding-top: @baseSize;
+	
+	&, a, a:hover, a:active, a:visited{
+		color: @navFontColor;
+		text-decoration: none;
+		font-size: @navFontSize;
+	}	
+	
+	ul{
+		width: 100%;
+	}
+	
+	li{		
+		list-style: none;
+						
+		a span{
+			display: block;
+			padding: @basePadding;
+			
+			&:not(.current):hover{
+				background: @cmdBgColorHover;
+				color: @cmdFontColorHover;
+			}
+			
+			&.current{
+				background: @cmdBgColorCurrent;
+				font-weight: bold;
+			}
+			
+			i{
+				padding-right: @basePadding;
+				
+				&.arrow{
+					float: right;
+					line-height: @baseLineHeight;
+				}
+			}
+		}
+		
+		ul{
+			display: none;
+		}
+		
+		li{
+			background: @navBgColorSub;
+			
+			a span{
+				padding-left: @basePadding * 2;
+				
+				&:not(.current):hover{
+					background: @cmdBgColorHover;
+				}
+				
+				&.current{
+					background: none;
+					font-weight: bold;
+				}
+			}
+		}
+	}
+}
+
+
+
+.trs-messenger{
+	padding: @baseSize;
+	height: 100%;
+	overflow-y: auto;
+		
+	.message{
+		min-height: @msgMsgHeight;
+		margin-bottom: @msgMsgHeight * 0.333333;
+		padding: @basePadding;
+		
+		background-color: @msgBgColorNeutral;
+		
+		.header{
+			display: block;
+			font-weight: bold;
+			
+			.icon{
+				padding-right: @basePadding;
+				color: @msgIconColorNeutral;
+			}
+			
+			.closer, .detailer{
+				padding-left: @basePadding;
+				line-height: @baseLineHeight;
+				float: right;
+				color: @msgIconColorNeutral;
+				
+				&:hover{
+					color: @msgIconColorHover;
+					cursor: pointer; 
+				}
+			}
+		}
+		
+		.content{
+			display: none;
+		}
+		
+		&.error{
+			background-color: @msgBgColorError;
+
+			.icon{
+				color: @msgIconColorError;
+			}
+		}
+		
+		&.success{
+			background-color: @msgBgColorSuccess;
+		
+			.icon{
+				color: @msgIconColorSuccess;
+			}
+		}		
+	}
+}
+
+
+
+.fa{
+	width: 2rem;
+	text-align: center;
+}
+
+
+
+p{
+	margin-bottom: @baseSize * 0.5;
+	text-align: justify;
+}
+
+input, select, textarea{
+	width: 100%;
+	font-size: 1rem;
+	color: @fontColorDark;
+	padding: @basePadding;
+	margin-bottom: @elementBaseHeight * 0.333333;
+	
+	&.short{
+		width: @baseSize * 3;
+	}
+	
+	&.medium{
+		width: @baseSize * 10;
+	}
+	
+	&.wide{
+		width: @baseSize * 20;
+	}
+}
+
+select{
+	padding-left: @basePadding * 0.5;
+}
+
+h1, h2, h3, h4, h5, h6{
+	color: @fontColorDark;
+	font-weight: bold;
+}
+
+h1{
+	font-size: 1.5rem;
+}
+
+h2{
+	font-size: 1.4rem;
+}
+
+h3{
+	font-size: 1.3rem;
+}
+
+h4{
+	font-size: 1.2rem;
+}
+
+h5{
+	font-size: 1.1rem;
+}
+
+h6{
+	font-size: 1rem;
+}
+
+
+// JQUERY OVERRIDES
+
+.ui-button{
+	border: none;
+	vertical-align: baseline;
+	
+	.ui-button-text{
+		padding: @basePadding !important;
+		
+		i{
+			padding-right: @basePadding;
+		}	
+	}
+}
+
+// DATATABLES OVERRIDES
+
+.dataTables_wrapper{
+	position: relative;
+			
+	.dataTables_processing {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 100%;
+		height: 40px;
+		margin-left: -50%;
+		margin-top: -25px;
+		padding-top: 20px;
+		text-align: center;
+		font-size: 1.2em;
+		background-color: white;
+	}
+	
+	.controls{
+		overflow: hidden;
+		
+		div{
+			display: inline;
+		}
+		
+		.dataTables_info{
+			padding: @basePadding;
+			float: left;
+		}
+		
+		.dataTables_paginate{
+			float: right;
+		}
+		
+		.dataTables_length{
+			padding: 0 @basePadding;
+			float: right;
+			
+			select{
+				width: auto;
+				margin: 0;
+			}
+		}
+	}
+	
+	table.dataTable{
+		width: 100%;
+		margin: 0 auto;
+		clear: both;
+		border-collapse: separate;
+		border-spacing: 0;
+		
+		thead{
+			text-align: left;
+		}
+		
+		tr{
+			&.odd{
+				background: @colorGrey6;	
+			}
+			
+			&.even{
+				background: @colorGrey5;
+			}	
+		
+			td, th{
+				padding: @basePadding;
+			}
+		}	
+	}
+}

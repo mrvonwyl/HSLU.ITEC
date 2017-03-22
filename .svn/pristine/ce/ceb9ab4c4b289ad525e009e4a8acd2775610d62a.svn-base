@@ -1,0 +1,405 @@
+/************************************\
+				IMPORTS
+\************************************/
+/************************************\
+	 			MIXINS
+\************************************/
+.mShadow {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
+  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
+}
+/************************************\
+				STYLES
+\************************************/
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  font-family: Open Sans;
+  line-height: 1.4545em;
+  text-decoration: none;
+}
+html {
+  height: 100%;
+  font-size: 81.25%;
+  color: #6a6a6a;
+}
+body {
+  height: 100%;
+  background: #cccccc;
+  overflow: hidden;
+  font-size: 1rem;
+}
+#page {
+  width: 100%;
+  height: 100%;
+  min-height: 45.4545rem;
+  margin: 0 auto;
+  position: relative;
+}
+#page #header {
+  width: 100%;
+  height: 3.8462rem;
+  background: #222222;
+}
+#page #center {
+  width: 100%;
+  height: calc((100%) - 7.6924rem);
+}
+#page #center #left {
+  width: 18.1818rem;
+  height: 100%;
+  background: #222222;
+  float: left;
+}
+#page #center #content {
+  width: calc((100%) - 45.454499999999996rem);
+  height: 100%;
+  float: left;
+  background: #ffffff;
+  padding: 0.7692rem;
+  overflow-y: auto;
+}
+#page #center #right {
+  width: 27.2727rem;
+  height: 100%;
+  float: right;
+  background: #cccccc;
+}
+#page #footer {
+  width: 100%;
+  height: 3.8462rem;
+  background: #222222;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.grid1,
+.grid2,
+.grid3,
+.grid4,
+.grid5,
+.grid6,
+.grid7,
+.grid8,
+.grid9,
+.grid10,
+.grid11,
+.grid12 {
+  display: inline;
+  float: left;
+  position: relative;
+}
+.grid1 > div,
+.grid2 > div,
+.grid3 > div,
+.grid4 > div,
+.grid5 > div,
+.grid6 > div,
+.grid7 > div,
+.grid8 > div,
+.grid9 > div,
+.grid10 > div,
+.grid11 > div,
+.grid12 > div {
+  margin: 0.7692rem;
+  padding: 1.5384rem;
+  background: #eeeeee;
+}
+.grid1 > div.noBg,
+.grid2 > div.noBg,
+.grid3 > div.noBg,
+.grid4 > div.noBg,
+.grid5 > div.noBg,
+.grid6 > div.noBg,
+.grid7 > div.noBg,
+.grid8 > div.noBg,
+.grid9 > div.noBg,
+.grid10 > div.noBg,
+.grid11 > div.noBg,
+.grid12 > div.noBg {
+  background: none;
+}
+.grid1 > div > :last-child,
+.grid2 > div > :last-child,
+.grid3 > div > :last-child,
+.grid4 > div > :last-child,
+.grid5 > div > :last-child,
+.grid6 > div > :last-child,
+.grid7 > div > :last-child,
+.grid8 > div > :last-child,
+.grid9 > div > :last-child,
+.grid10 > div > :last-child,
+.grid11 > div > :last-child,
+.grid12 > div > :last-child {
+  margin-bottom: 0;
+}
+.grid1 {
+  width: 8.333333%;
+}
+.grid2 {
+  width: 16.666667%;
+}
+.grid3 {
+  width: 25%;
+}
+.grid4 {
+  width: 33.333333%;
+}
+.grid5 {
+  width: 41.666667%;
+}
+.grid6 {
+  width: 50%;
+}
+.grid7 {
+  width: 58.333333%;
+}
+.grid8 {
+  width: 66.666667%;
+}
+.grid9 {
+  width: 75%;
+}
+.grid10 {
+  width: 83.333333%;
+}
+.grid11 {
+  width: 91.666667%;
+}
+.grid12 {
+  width: 100%;
+}
+#mainMenu {
+  background: #222222;
+  padding-top: 1.5384rem;
+}
+#mainMenu,
+#mainMenu a,
+#mainMenu a:hover,
+#mainMenu a:active,
+#mainMenu a:visited {
+  color: #eeeeee;
+  text-decoration: none;
+  font-size: 1.0769rem;
+}
+#mainMenu ul {
+  width: 100%;
+}
+#mainMenu li {
+  list-style: none;
+}
+#mainMenu li a span {
+  display: block;
+  padding: 0.63635rem;
+}
+#mainMenu li a span:not(.current):hover {
+  background: #333333;
+  color: #2ea2cc;
+}
+#mainMenu li a span.current {
+  background: #0074a2;
+  font-weight: bold;
+}
+#mainMenu li a span i {
+  padding-right: 0.63635rem;
+}
+#mainMenu li a span i.arrow {
+  float: right;
+  line-height: 1.4545em;
+}
+#mainMenu li ul {
+  display: none;
+}
+#mainMenu li li {
+  background: #333333;
+}
+#mainMenu li li a span {
+  padding-left: 1.2727rem;
+}
+#mainMenu li li a span:not(.current):hover {
+  background: #333333;
+}
+#mainMenu li li a span.current {
+  background: none;
+  font-weight: bold;
+}
+.trs-messenger {
+  padding: 1.5384rem;
+  height: 100%;
+  overflow-y: auto;
+}
+.trs-messenger .message {
+  min-height: 2.7272rem;
+  margin-bottom: 0.9090657576rem;
+  padding: 0.63635rem;
+  background-color: #ebebeb;
+}
+.trs-messenger .message .header {
+  display: block;
+  font-weight: bold;
+}
+.trs-messenger .message .header .icon {
+  padding-right: 0.63635rem;
+  color: #aaaaaa;
+}
+.trs-messenger .message .header .closer,
+.trs-messenger .message .header .detailer {
+  padding-left: 0.63635rem;
+  line-height: 1.4545em;
+  float: right;
+  color: #aaaaaa;
+}
+.trs-messenger .message .header .closer:hover,
+.trs-messenger .message .header .detailer:hover {
+  color: #333333;
+  cursor: pointer;
+}
+.trs-messenger .message .content {
+  display: none;
+}
+.trs-messenger .message.error {
+  background-color: #ffebeb;
+}
+.trs-messenger .message.error .icon {
+  color: #aa0000;
+}
+.trs-messenger .message.success {
+  background-color: #ebffeb;
+}
+.trs-messenger .message.success .icon {
+  color: #00aa00;
+}
+.fa {
+  width: 2rem;
+  text-align: center;
+}
+p {
+  margin-bottom: 0.7692rem;
+  text-align: justify;
+}
+input,
+select,
+textarea {
+  width: 100%;
+  font-size: 1rem;
+  color: #6a6a6a;
+  padding: 0.63635rem;
+  margin-bottom: 0.9090657576rem;
+}
+input.short,
+select.short,
+textarea.short {
+  width: 4.6152rem;
+}
+input.medium,
+select.medium,
+textarea.medium {
+  width: 15.384rem;
+}
+input.wide,
+select.wide,
+textarea.wide {
+  width: 30.768rem;
+}
+select {
+  padding-left: 0.318175rem;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #6a6a6a;
+  font-weight: bold;
+}
+h1 {
+  font-size: 1.5rem;
+}
+h2 {
+  font-size: 1.4rem;
+}
+h3 {
+  font-size: 1.3rem;
+}
+h4 {
+  font-size: 1.2rem;
+}
+h5 {
+  font-size: 1.1rem;
+}
+h6 {
+  font-size: 1rem;
+}
+.ui-button {
+  border: none;
+  vertical-align: baseline;
+}
+.ui-button .ui-button-text {
+  padding: 0.63635rem !important;
+}
+.ui-button .ui-button-text i {
+  padding-right: 0.63635rem;
+}
+.dataTables_wrapper {
+  position: relative;
+}
+.dataTables_wrapper .dataTables_processing {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 40px;
+  margin-left: -50%;
+  margin-top: -25px;
+  padding-top: 20px;
+  text-align: center;
+  font-size: 1.2em;
+  background-color: white;
+}
+.dataTables_wrapper .controls {
+  overflow: hidden;
+}
+.dataTables_wrapper .controls div {
+  display: inline;
+}
+.dataTables_wrapper .controls .dataTables_info {
+  padding: 0.63635rem;
+  float: left;
+}
+.dataTables_wrapper .controls .dataTables_paginate {
+  float: right;
+}
+.dataTables_wrapper .controls .dataTables_length {
+  padding: 0 0.63635rem;
+  float: right;
+}
+.dataTables_wrapper .controls .dataTables_length select {
+  width: auto;
+  margin: 0;
+}
+.dataTables_wrapper table.dataTable {
+  width: 100%;
+  margin: 0 auto;
+  clear: both;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+.dataTables_wrapper table.dataTable thead {
+  text-align: left;
+}
+.dataTables_wrapper table.dataTable tr.odd {
+  background: #ffffff;
+}
+.dataTables_wrapper table.dataTable tr.even {
+  background: #eeeeee;
+}
+.dataTables_wrapper table.dataTable tr td,
+.dataTables_wrapper table.dataTable tr th {
+  padding: 0.63635rem;
+}
